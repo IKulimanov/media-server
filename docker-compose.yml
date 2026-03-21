@@ -234,7 +234,7 @@ services:
   # Интегрируется с Sonarr/Radarr/Prowlarr и шлёт в Telegram
   # Требует бесплатный аккаунт на notifiarr.com
   notifiarr:
-    image: golift/notifiarr:stable
+    image: golift/notifiarr:latest
     container_name: notifiarr
     hostname: ${HOSTNAME:-mediaserver}
     environment:
