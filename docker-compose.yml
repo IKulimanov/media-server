@@ -270,7 +270,7 @@ services:
       # Telegram уведомления о обновлениях контейнеров
       # Формат: telegram://BOT_TOKEN@telegram?channels=CHAT_ID
       - WATCHTOWER_NOTIFICATION_URL=telegram://${TELEGRAM_BOT_TOKEN}@telegram?channels=${TELEGRAM_CHAT_ID}
-      - WATCHTOWER_NOTIFICATION_TEMPLATE=💧 *Watchtower*\n{{range .}}✅ {{.Name}} обновлён до {{.ImageName}}\n{{end}}
+      - WATCHTOWER_NOTIFICATION_TEMPLATE=💧 Watchtower обновил контейнеры на {{ .Host }}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     restart: unless-stopped
