@@ -263,6 +263,7 @@ services:
     container_name: watchtower
     environment:
       - TZ=${TZ}
+      - DOCKER_API_VERSION=1.44
       - WATCHTOWER_CLEANUP=true              # удалять старые образы после обновления
       - WATCHTOWER_INCLUDE_STOPPED=false     # не трогать остановленные контейнеры
       - WATCHTOWER_SCHEDULE=0 0 4 * * *     # проверка обновлений в 4:00 ночи
