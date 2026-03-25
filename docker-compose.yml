@@ -53,6 +53,8 @@ services:
       - 8080:8080    # WebUI
       - 6881:6881    # Torrent TCP
       - 6881:6881/udp
+    mem_limit: 1g          # ← правильный синтаксис для compose
+    memswap_limit: 1g      # ← отключает своп сверх лимита
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-sf", "http://localhost:8080"]
@@ -60,10 +62,6 @@ services:
       timeout: 10s
       retries: 5
       start_period: 30s
-    deploy:
-      resources:
-        limits:
-          memory: 1G
 
   # ╔══════════════════════════════════════════════════════════╗
   # ║  ИНДЕКСАТОРЫ                                             ║
